@@ -20,6 +20,7 @@ export const store = configureStore({
     ),
   },
 
+  //@ts-ignore
   middleware,
 });
 
