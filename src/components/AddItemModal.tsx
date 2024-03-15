@@ -15,14 +15,13 @@ export default function AddItemModal() {
   const { listForm, onSubmitList } = useForms();
 
   return (
-    <Modal
-      isOpen={showAddItemModal}
-      onClose={hideAddListModal}
-      modalContainerExtendedClassName="py-25px relative w-11/12  max-w-[580px] rounded-[12px] bg-[#fff] px-[18px] text-center sm:px-[30px] sm:py-[32px] md:px-[36px] md:py-[34px] lg:px-[45px] lg:py-[38px] xl:px-[62px] xl:py-[41px]"
-      modalContentExtendedClassName="relative"
-    >
-      <span className="text-black">ADD ITEM MODAL</span>
-      <form onSubmit={listForm.handleSubmit(onSubmitList)}>
+    <Modal isOpen={showAddItemModal} onClose={hideAddListModal}>
+      <form
+        className=" p-4 md:p-6 relative w-[300px] sm:w-[400px] md:w-[600px] bg-[#fff] rounded-[12px]"
+        onSubmit={listForm.handleSubmit(onSubmitList)}
+      >
+        <span className="text-black">ADD ITEM MODAL</span>
+
         <TextField
           name="listName"
           label="List Name"
@@ -36,8 +35,10 @@ export default function AddItemModal() {
           options={quantityOption}
           label="Quantity"
         />
-        <BaseButton type="submit">SAVE</BaseButton>
-        <BaseButton onClick={() => hideAddListModal()}>CLOSE</BaseButton>
+        <div className="flex gap-3 justify-end">
+          <BaseButton type="submit">SAVE</BaseButton>
+          <BaseButton onClick={() => hideAddListModal()}>CLOSE</BaseButton>
+        </div>
       </form>
     </Modal>
   );

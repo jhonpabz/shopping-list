@@ -19,7 +19,7 @@ export default function TextField(props: ComponentsPropsNamespace.TextField) {
     () =>
       isError
         ? "border-[#f56c6c] border-[0.5px]"
-        : "border-[#13212D] border-[0]",
+        : "border-[##409eff] border-[0]",
     [isError]
   );
 
@@ -30,10 +30,10 @@ export default function TextField(props: ComponentsPropsNamespace.TextField) {
         control={form.control}
         rules={{ required }}
         render={({ field: { onChange, value } }) => (
-          <div className="relative h-[84px]">
+          <div className="relative h-[84px] w-full">
             <label
               htmlFor={name}
-              className="mb-2 block text-[12px] font-[600] text-white lg:mt-[10px] lg:text-[15px]"
+              className="mb-2 block text-[12px] font-[600] text-black lg:mt-[10px] lg:text-[15px]"
             >
               {required && (
                 <span className="mr-[4px] font-extrabold text-red-500">*</span>
@@ -49,7 +49,7 @@ export default function TextField(props: ComponentsPropsNamespace.TextField) {
                 changeListener(event);
               }}
               value={value}
-              className={`block w-full rounded p-[9px] text-sm  focus:border-input-focus ${borderClass}`}
+              className={`block w-full rounded p-[9px] text-sm border-2 border-[#66666660] focus:border-[#409eff] ${borderClass}`}
               placeholder={placeholder}
             />
           </div>
