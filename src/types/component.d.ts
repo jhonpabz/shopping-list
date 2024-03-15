@@ -23,4 +23,21 @@ declare namespace ComponentsPropsNamespace {
   };
 
   type ListContainer = React.HTMLAttributes<HTMLDivElement>;
+
+  type DefaultFormFieldProps = {
+    formState: {
+      errors: FieldError | undefined;
+      dirtyFields?: Dirtied<TFieldValues>;
+    };
+    control: Control<FieldValues, CreateFaceInput>;
+  };
+
+  type TextField = React.HTMLAttributes<HTMLDivElement> & {
+    required?: boolean | undefined;
+    form: DefaultFormFieldProps;
+    name: string;
+    label: string;
+    placeholder: string;
+    changeListener?: ChangeEvent<HTMLInputElement> | (() => void);
+  };
 }
