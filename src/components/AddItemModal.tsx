@@ -36,7 +36,7 @@ export default function AddItemModal() {
           options={quantityOption}
           label="Quantity"
         />
-        <BaseButton>SAVE</BaseButton>
+        <BaseButton type="submit">SAVE</BaseButton>
         <BaseButton onClick={() => hideAddListModal()}>CLOSE</BaseButton>
       </form>
     </Modal>
