@@ -48,3 +48,22 @@ export const quantityOption = [
     value: "12",
   },
 ];
+
+export const typeOption = [
+  {
+    title: "Grocery",
+    value: "grocery",
+  },
+  {
+    title: "Home",
+    value: "home",
+  },
+  {
+    title: "Goods",
+    value: "goods",
+  },
+  {
+    title: "Hardware",
+    value: "hardware",
+  },
+];

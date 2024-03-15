@@ -19,7 +19,7 @@ export default function TextField(props: ComponentsPropsNamespace.TextField) {
     () =>
       isError
         ? "border-[#f56c6c] border-[0.5px]"
-        : "border-[##409eff] border-[0]",
+        : "border-[#66666660] border-[0.5px]",
     [isError]
   );
 
@@ -49,7 +49,7 @@ export default function TextField(props: ComponentsPropsNamespace.TextField) {
                 changeListener(event);
               }}
               value={value}
-              className={`block w-full rounded p-[9px] text-sm border-2 border-[#66666660] focus:border-[#409eff] ${borderClass}`}
+              className={`block w-full rounded p-[9px] text-sm focus:border-[#409eff] ${borderClass}`}
               placeholder={placeholder}
             />
           </div>

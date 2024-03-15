@@ -4,7 +4,7 @@ import BaseButton from "@/components/base/BaseButton";
 import TextField from "./forms/TextField";
 import { useForms } from "@/hooks/form/useForms";
 import SelectField from "./forms/SelectField";
-import { quantityOption } from "@/constants/formOptions";
+import { quantityOption, typeOption } from "@/constants/formOptions";
 
 export default function AddItemModal() {
   const {
@@ -28,6 +28,15 @@ export default function AddItemModal() {
           placeholder="Item Name"
           form={listForm}
         />
+
+        <SelectField
+          form={listForm}
+          register={listForm.register}
+          name="type"
+          options={typeOption}
+          label="Type"
+        />
+
         <SelectField
           form={listForm}
           register={listForm.register}
