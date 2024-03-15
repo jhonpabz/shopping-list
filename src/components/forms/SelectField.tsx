@@ -7,7 +7,7 @@ export default function SelectField(
 
   return (
     <BaseComponentLayout {...restProps}>
-      <select {...register(name)}>
+      <select className="w-full" {...register(name)}>
         {options.map((item: any) => (
           <option key={item.value} value="1">
             {item.title}

@@ -13,30 +13,32 @@ export default function AddItemModal() {
   } = useShoppingList();
 
   const { listForm, onSubmitList } = useForms();
-  const register = listForm.register;
+
   return (
     <Modal
       isOpen={showAddItemModal}
-      dismissible
       onClose={hideAddListModal}
       modalContainerExtendedClassName="py-25px relative w-11/12  max-w-[580px] rounded-[12px] bg-[#fff] px-[18px] text-center sm:px-[30px] sm:py-[32px] md:px-[36px] md:py-[34px] lg:px-[45px] lg:py-[38px] xl:px-[62px] xl:py-[41px]"
       modalContentExtendedClassName="relative"
     >
       <span className="text-black">ADD ITEM MODAL</span>
-      <TextField
-        name="listName"
-        label="List Name"
-        placeholder="Item Name"
-        form={listForm}
-      />
-      <SelectField
-        form={listForm}
-        register={listForm.register}
-        name="quantity"
-        options={quantityOption}
-        label="Quantity"
-      />
-      <BaseButton onClick={() => hideAddListModal()}>CLOSE</BaseButton>
+      <form onSubmit={listForm.handleSubmit(onSubmitList)}>
+        <TextField
+          name="listName"
+          label="List Name"
+          placeholder="Item Name"
+          form={listForm}
+        />
+        <SelectField
+          form={listForm}
+          register={listForm.register}
+          name="quantity"
+          options={quantityOption}
+          label="Quantity"
+        />
+        <BaseButton>SAVE</BaseButton>
+        <BaseButton onClick={() => hideAddListModal()}>CLOSE</BaseButton>
+      </form>
     </Modal>
   );
 }
