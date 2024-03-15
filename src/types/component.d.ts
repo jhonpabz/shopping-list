@@ -21,4 +21,6 @@ declare namespace ComponentsPropsNamespace {
     modalContainerExtendedClassName?: string;
     modalContentExtendedClassName?: string;
   };
+
+  type ListContainer = React.HTMLAttributes<HTMLDivElement>;
 }
