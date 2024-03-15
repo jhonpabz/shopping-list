@@ -2,9 +2,10 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import { storage } from "@/lib/redux/storage";
-import { persistStore } from "redux-persist";
+import { persistReducer, persistStore } from "redux-persist";
 
 import { middleware } from "@/lib/redux/middleware";
+import shoppingListReducer from "@/store/shoppingList.reducer";
 
 const persistConfig = (key: string) => ({
   key,
@@ -12,7 +13,12 @@ const persistConfig = (key: string) => ({
 });
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    shoppingList: persistReducer(
+      persistConfig("shoppingList"),
+      shoppingListReducer
+    ),
+  },
 
   middleware,
 });
