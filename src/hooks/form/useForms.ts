@@ -1,10 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import listSchema from "@/components/forms/validations/listSchema";
-
-const listFormDefault = {
-  listName: "",
-};
+import { listFormDefault } from "@/utils/defaultValues";
 
 export function useForms() {
   const listForm = useForm({
