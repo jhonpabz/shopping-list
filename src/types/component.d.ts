@@ -24,6 +24,7 @@ declare namespace ComponentsPropsNamespace {
   };
 
   type ListContainer = React.HTMLAttributes<HTMLDivElement>;
+  type ShoppingList = React.HTMLAttributes<HTMLDivElement>;
 
   type DefaultFormFieldProps = {
     formState: {

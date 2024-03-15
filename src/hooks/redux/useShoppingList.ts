@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "@/lib/redux/useReduxState";
 import { ShoppingListAction } from "@/store/shoppingList.reducer";
 
 export default function useShoppingList() {
-  const { showAddItemModal } = useAppSelector((s) => s.shoppingList);
+  const { showAddItemModal, list } = useAppSelector((s) => s.shoppingList);
   const dispatch = useAppDispatch<ShoppingListAction>();
 
   const setIsAddItemModalShow = useCallback(
@@ -27,12 +27,26 @@ export default function useShoppingList() {
     [setIsAddItemModalShow]
   );
 
+  const setList = useCallback(
+    (payload: any) => {
+      dispatch({
+        type: "shoppingList/setList",
+        payload: [...list, payload],
+      });
+    },
+    [dispatch, list]
+  );
+
+  // const setItem = useCallback((payload: any) => {}, []);
+
   return {
     state: {
       showAddItemModal,
+      list,
     },
 
     showAddListModal,
     hideAddListModal,
+    setList,
   };
 }

@@ -2,8 +2,11 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import listSchema from "@/components/forms/validations/listSchema";
 import { listFormDefault } from "@/utils/defaultValues";
+import useShoppingList from "../redux/useShoppingList";
 
 export function useForms() {
+  const { setList } = useShoppingList();
+
   const listForm = useForm({
     mode: "onSubmit",
     resolver: yupResolver(listSchema),
@@ -11,8 +14,16 @@ export function useForms() {
   });
 
   const onSubmitList: SubmitHandler<any> = async (formData: any) => {
-    console.log("formData: ", formData);
+    const { listName, quantity, type } = formData;
+    const newItem = {
+      listName,
+      quantity,
+      type,
+      id: Date.now(),
+    };
+    setList(newItem);
   };
+
   return {
     listForm,
     onSubmitList,

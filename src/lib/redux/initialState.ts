@@ -1,3 +1,4 @@
-export const initialDashboardState: ReduxSpace.ShoppingList.State = {
+export const initialShoppingListState: ReduxSpace.ShoppingList.State = {
   showAddItemModal: false,
+  list: [],
 };

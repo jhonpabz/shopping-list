@@ -7,6 +7,7 @@ declare namespace ReduxSpace {
   namespace ShoppingList {
     type State = {
       showAddItemModal: boolean;
+      list: Array;
     };
   }
 }
