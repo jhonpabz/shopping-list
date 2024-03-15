@@ -8,4 +8,8 @@ declare namespace ComponentsPropsNamespace {
     width?: number;
     height?: number;
   };
+
+  type BaseButton = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  };
 }
