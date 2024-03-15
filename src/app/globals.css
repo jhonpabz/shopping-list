@@ -16,6 +16,19 @@
   }
 }
 
+@layer components {
+  /* Modal */
+  .modal-overlay {
+    @apply fixed inset-0 z-40 bg-black opacity-50;
+  }
+  .modal-container {
+    @apply fixed inset-0 z-50 flex items-center justify-center;
+  }
+  .modal-content {
+    @apply rounded bg-transparent;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

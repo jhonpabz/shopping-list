@@ -12,4 +12,13 @@ declare namespace ComponentsPropsNamespace {
   type BaseButton = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
   };
+
+  type Modal = React.HTMLAttributes<HTMLDivElement> & {
+    isOpen: boolean;
+    onClose?: ChangeEvent<HTMLElement> | (() => void);
+    dismissible?: boolean | undefined;
+    overlayExtendedClassName?: string;
+    modalContainerExtendedClassName?: string;
+    modalContentExtendedClassName?: string;
+  };
 }
