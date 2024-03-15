@@ -31,13 +31,21 @@ export default function useShoppingList() {
     (payload: any) => {
       dispatch({
         type: "shoppingList/setList",
+        payload: payload,
+      });
+    },
+    [dispatch]
+  );
+
+  const setListItem = useCallback(
+    (payload: any) => {
+      dispatch({
+        type: "shoppingList/setList",
         payload: [...list, payload],
       });
     },
     [dispatch, list]
   );
-
-  // const setItem = useCallback((payload: any) => {}, []);
 
   return {
     state: {
@@ -48,5 +56,6 @@ export default function useShoppingList() {
     showAddListModal,
     hideAddListModal,
     setList,
+    setListItem,
   };
 }

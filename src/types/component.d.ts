@@ -24,13 +24,16 @@ declare namespace ComponentsPropsNamespace {
   };
 
   type ListContainer = React.HTMLAttributes<HTMLDivElement>;
-  type ShoppingList = React.HTMLAttributes<HTMLDivElement>;
+  type ShoppingList = React.HTMLAttributes<HTMLDivElement> & {
+    onSortEnd?: any;
+    list: any;
+  };
   type ShoppingListItem = React.HTMLAttributes<HTMLDivElement> & {
     item: {
       listName: string;
       quantity: string;
       type: string;
-      id: string;
+      id: number;
     };
   };
 

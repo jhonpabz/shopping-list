@@ -5,7 +5,7 @@ import { listFormDefault } from "@/utils/defaultValues";
 import useShoppingList from "../redux/useShoppingList";
 
 export function useForms() {
-  const { setList } = useShoppingList();
+  const { setListItem } = useShoppingList();
 
   const listForm = useForm({
     mode: "onSubmit",
@@ -21,7 +21,7 @@ export function useForms() {
       type,
       id: Date.now(),
     };
-    setList(newItem);
+    setListItem(newItem);
   };
 
   return {
