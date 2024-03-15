@@ -40,4 +40,12 @@ declare namespace ComponentsPropsNamespace {
     placeholder: string;
     changeListener?: ChangeEvent<HTMLInputElement> | (() => void);
   };
+
+  type SelectField = React.HTMLAttributes<HTMLDivElement> & {
+    form: DefaultFormFieldProps;
+    name: string;
+    label: string;
+    register: any;
+    options: any;
+  };
 }

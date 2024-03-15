@@ -8,7 +8,7 @@ const listFormDefault = {
 
 export function useForms() {
   const listForm = useForm({
-    mode: "onChange",
+    mode: "onSubmit",
     resolver: yupResolver(listSchema),
     defaultValues: listFormDefault,
   });

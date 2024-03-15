@@ -3,6 +3,8 @@ import useShoppingList from "@/hooks/redux/useShoppingList";
 import BaseButton from "@/components/base/BaseButton";
 import TextField from "./forms/TextField";
 import { useForms } from "@/hooks/form/useForms";
+import SelectField from "./forms/SelectField";
+import { quantityOption } from "@/constants/formOptions";
 
 export default function AddItemModal() {
   const {
@@ -11,7 +13,7 @@ export default function AddItemModal() {
   } = useShoppingList();
 
   const { listForm, onSubmitList } = useForms();
-
+  const register = listForm.register;
   return (
     <Modal
       isOpen={showAddItemModal}
@@ -26,6 +28,13 @@ export default function AddItemModal() {
         label="List Name"
         placeholder="Item Name"
         form={listForm}
+      />
+      <SelectField
+        form={listForm}
+        register={listForm.register}
+        name="quantity"
+        options={quantityOption}
+        label="Quantity"
       />
       <BaseButton onClick={() => hideAddListModal()}>CLOSE</BaseButton>
     </Modal>
