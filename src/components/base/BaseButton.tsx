@@ -2,11 +2,18 @@ import BaseComponentLayout from "@/layouts/BaseComponentLayout";
 import { useMemo } from "react";
 
 export default function BaseButton(props: ComponentsPropsNamespace.BaseButton) {
-  const { children, onClick, type, primary = false, ...restProps } = props;
+  const {
+    children,
+    onClick,
+    type,
+    primary = false,
+    warning = false,
+    ...restProps
+  } = props;
 
   const backGroundClass = useMemo(() => {
-    return primary ? "bg-sky-500" : "bg-slate-500";
-  }, [primary]);
+    return primary ? "bg-sky-500" : warning ? "bg-red-500" : "bg-slate-500";
+  }, [primary, warning]);
 
   return (
     <BaseComponentLayout {...restProps}>

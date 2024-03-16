@@ -25,7 +25,7 @@ const ShoppingListItem = SortableElement(
           <span>{item.listName}</span>
           <span>{item.quantity}</span>
 
-          <BaseButton className="!bg-red-500" onClick={handleDelete}>
+          <BaseButton onClick={handleDelete} warning>
             -
           </BaseButton>
         </li>

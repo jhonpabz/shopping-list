@@ -13,6 +13,7 @@ declare namespace ComponentsPropsNamespace {
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
     type?: string;
     primary?: boolean;
+    warning?: boolean;
   };
 
   type Modal = React.HTMLAttributes<HTMLDivElement> & {
