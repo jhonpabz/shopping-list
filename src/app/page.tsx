@@ -27,7 +27,9 @@ export default function Home() {
   return (
     <main className="w-full">
       <ListContainer>
-        <h1 className="text-center py-7 text-[3rem]">My Shopping List</h1>
+        <h1 className="text-center py-7 text-[1.4rem]  md:text-[2rem] lg:text-[3rem] font-medium">
+          My Shopping List
+        </h1>
         <BaseButton className="w-full" onClick={handleAddItem} primary>
           + Add an item
         </BaseButton>

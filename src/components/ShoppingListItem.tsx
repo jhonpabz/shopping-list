@@ -38,7 +38,11 @@ const ShoppingListItem = SortableElement(
             readOnly
           />
 
-          <BaseButton onClick={handleDelete} warning>
+          <BaseButton
+            className="!w-[20px] md:w-7"
+            onClick={handleDelete}
+            warning
+          >
             -
           </BaseButton>
         </li>
