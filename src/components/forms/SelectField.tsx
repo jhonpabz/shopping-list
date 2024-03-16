@@ -2,9 +2,7 @@ import { useMemo } from "react";
 import BaseComponentLayout from "@/layouts/BaseComponentLayout";
 import ErrorMessage from "@/components/forms/ErrorMessage";
 
-export default function SelectField(
-  props: ComponentsPropsNamespace.SelectField
-) {
+export function SelectField(props: ComponentsPropsNamespace.SelectField) {
   const {
     name,
     label,

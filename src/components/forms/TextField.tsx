@@ -3,7 +3,7 @@ import { Controller } from "react-hook-form";
 import BaseComponentLayout from "@/layouts/BaseComponentLayout";
 import ErrorMessage from "@/components/forms/ErrorMessage";
 
-export default function TextField(props: ComponentsPropsNamespace.TextField) {
+export function TextField(props: ComponentsPropsNamespace.TextField) {
   const {
     name,
     label,

@@ -1,10 +1,9 @@
 import Modal from "@/components/Modal";
 import useShoppingList from "@/hooks/redux/useShoppingList";
 import BaseButton from "@/components/base/BaseButton";
-import TextField from "./forms/TextField";
 import { useForms } from "@/hooks/form/useForms";
-import SelectField from "./forms/SelectField";
 import { quantityOption, typeOption } from "@/constants/formOptions";
+import { SelectField, TextField } from "@/components/forms";
 
 export default function AddItemModal() {
   const {
