@@ -26,9 +26,9 @@ export default function Home() {
 
   return (
     <main className="w-full">
-      My Shopping List
       <ListContainer>
-        <BaseButton onClick={handleAddItem} primary>
+        <h1 className="text-center py-7 text-[3rem]">My Shopping List</h1>
+        <BaseButton className="w-full" onClick={handleAddItem} primary>
           + Add an item
         </BaseButton>
         <ShoppingList onSortEnd={onSortEnd} />
