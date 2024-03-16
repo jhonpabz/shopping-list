@@ -21,8 +21,9 @@ export function useForms() {
       type,
       id: Date.now(),
     };
-    setListItem(newItem);
-    hideAddListModal();
+    setListItem(newItem); // Add the new item to the list
+    hideAddListModal(); // Close the modal
+    listForm.reset(); // Clear form fields
   };
 
   return {
