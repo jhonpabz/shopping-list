@@ -28,7 +28,9 @@ export default function Home() {
     <main className="w-full">
       My Shopping List
       <ListContainer>
-        <BaseButton onClick={handleAddItem}>+ Add an item</BaseButton>
+        <BaseButton onClick={handleAddItem} primary>
+          + Add an item
+        </BaseButton>
         <ShoppingList onSortEnd={onSortEnd} />
       </ListContainer>
       <AddItemModal />

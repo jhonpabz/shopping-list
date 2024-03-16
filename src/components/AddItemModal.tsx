@@ -46,7 +46,9 @@ export default function AddItemModal() {
           label="Quantity"
         />
         <div className="flex gap-3 justify-end">
-          <BaseButton type="submit">SAVE</BaseButton>
+          <BaseButton primary type="submit">
+            SAVE
+          </BaseButton>
           <BaseButton onClick={() => hideAddListModal()}>CLOSE</BaseButton>
         </div>
       </form>
