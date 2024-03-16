@@ -68,4 +68,5 @@ declare namespace ComponentsPropsNamespace {
   };
 
   type ErrorMessage = React.HTMLAttributes<HTMLParagraphElement>;
+  type ShoppingListHeader = React.HTMLAttributes<HTMLDivElement>;
 }

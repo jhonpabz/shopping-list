@@ -20,7 +20,7 @@ export default function BaseButton(props: ComponentsPropsNamespace.BaseButton) {
       <button
         type={type}
         onClick={onClick}
-        className={`${backGroundClass} text-white min-w-[100px] px-5 py-2`}
+        className={`${backGroundClass} text-white min-w-[100px] px-5 py-2 rounded`}
       >
         {children}
       </button>
