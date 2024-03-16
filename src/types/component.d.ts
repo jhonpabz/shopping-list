@@ -49,10 +49,12 @@ declare namespace ComponentsPropsNamespace {
 
   type TextField = React.HTMLAttributes<HTMLDivElement> & {
     required?: boolean | undefined;
-    form: DefaultFormFieldProps;
-    name: string;
-    label: string;
-    placeholder: string;
+    readOnly?: boolean | undefined;
+    form?: DefaultFormFieldProps;
+    name?: string;
+    label?: string;
+    placeholder?: string;
+    fieldValue: string;
     changeListener?: ChangeEvent<HTMLInputElement> | (() => void);
   };
 

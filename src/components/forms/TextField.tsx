@@ -5,17 +5,30 @@ import ErrorMessage from "@/components/forms/ErrorMessage";
 
 export function TextField(props: ComponentsPropsNamespace.TextField) {
   const {
-    name,
-    label,
-    placeholder,
+    name = "",
+    label = "",
+    placeholder = "",
     required = true,
     changeListener = () => {},
     form,
+    readOnly = false,
+    fieldValue = "",
     ...restProps
   } = props;
 
-  const isError = !!form.formState.errors[name]?.message;
+  if (readOnly)
+    return (
+      <input
+        type="text"
+        value={fieldValue}
+        className={`block w-full rounded p-[9px] text-sm  border-[0.5px]`}
+        readOnly
+      />
+    );
 
+  const isError = !!form?.formState.errors[name]?.message;
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const borderClass = useMemo(
     () => (isError ? "border-[#f56c6c]" : "border-[#66666660] "),
     [isError]
@@ -25,7 +38,7 @@ export function TextField(props: ComponentsPropsNamespace.TextField) {
     <BaseComponentLayout {...restProps}>
       <Controller
         name={name}
-        control={form.control}
+        control={form?.control}
         rules={{ required }}
         render={({ field: { onChange, value } }) => (
           <div className="relative h-[84px] w-full">
