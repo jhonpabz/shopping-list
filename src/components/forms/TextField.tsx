@@ -18,12 +18,14 @@ export function TextField(props: ComponentsPropsNamespace.TextField) {
 
   if (readOnly)
     return (
-      <input
-        type="text"
-        value={fieldValue}
-        className={`block w-full rounded p-[9px] text-sm  border-[0.5px]`}
-        readOnly
-      />
+      <BaseComponentLayout {...restProps}>
+        <input
+          type="text"
+          value={fieldValue}
+          className={`block w-full rounded p-[9px] text-sm  border-[0.5px]`}
+          readOnly
+        />
+      </BaseComponentLayout>
     );
 
   const isError = !!form?.formState.errors[name]?.message;
