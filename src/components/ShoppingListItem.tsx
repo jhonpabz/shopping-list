@@ -28,6 +28,7 @@ const ShoppingListItem = SortableElement(
           <BaseImage
             height={40}
             width={40}
+            alt="Grab icon"
             src={DragIcon}
             className="cursor-grab"
           />

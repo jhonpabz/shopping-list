@@ -4,7 +4,6 @@ import { arrayMoveImmutable } from "array-move";
 import AddItemModal from "@/components/AddItemModal";
 import ListContainer from "@/components/ListContainer";
 import ShoppingList from "@/components/ShoppingList";
-
 import BaseButton from "@/components/base/BaseButton";
 import useShoppingList from "@/hooks/redux/useShoppingList";
 

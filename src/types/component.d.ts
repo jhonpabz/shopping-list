@@ -31,12 +31,7 @@ declare namespace ComponentsPropsNamespace {
     list: any;
   };
   type ShoppingListItem = React.HTMLAttributes<HTMLDivElement> & {
-    item: {
-      listName: string;
-      quantity: string;
-      type: string;
-      id: number;
-    };
+    item: ItemType;
   };
 
   type DefaultFormFieldProps = {
@@ -54,7 +49,7 @@ declare namespace ComponentsPropsNamespace {
     name?: string;
     label?: string;
     placeholder?: string;
-    fieldValue: string;
+    fieldValue?: string;
     changeListener?: ChangeEvent<HTMLInputElement> | (() => void);
   };
 

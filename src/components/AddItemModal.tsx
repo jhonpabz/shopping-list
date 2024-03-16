@@ -19,7 +19,7 @@ export default function AddItemModal() {
         className=" p-4 md:p-6 relative w-[300px] sm:w-[400px] md:w-[600px] bg-[#fff] rounded-[12px]"
         onSubmit={listForm.handleSubmit(onSubmitList)}
       >
-        <span className="text-black">ADD ITEM MODAL</span>
+        <span className="text-black font-semibold text-[1.4rem]">ADD ITEM</span>
 
         <TextField
           name="listName"

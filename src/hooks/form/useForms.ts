@@ -8,12 +8,12 @@ export function useForms() {
   const { setListItem, hideAddListModal } = useShoppingList();
 
   const listForm = useForm({
-    mode: "onSubmit",
-    resolver: yupResolver(listSchema),
-    defaultValues: listFormDefault,
+    mode: "onSubmit", // the validation or passing of data will be triggered via on submit button
+    resolver: yupResolver(listSchema), //listSchema is form the validation schema of the form
+    defaultValues: listFormDefault, // default value of a form
   });
 
-  const onSubmitList: SubmitHandler<any> = async (formData: any) => {
+  const onSubmitList: SubmitHandler<any> = async (formData: ItemType) => {
     const { listName, quantity, type } = formData;
     const newItem = {
       listName,

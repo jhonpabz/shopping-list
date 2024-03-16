@@ -18,15 +18,19 @@ export default function useShoppingList() {
     [dispatch]
   );
 
+  // Open Add Item form modal
   const showAddListModal = useCallback(
     () => setIsAddItemModalShow(true),
     [setIsAddItemModalShow]
   );
+
+  // Close Add Item form modal
   const hideAddListModal = useCallback(
     () => setIsAddItemModalShow(false),
     [setIsAddItemModalShow]
   );
 
+  // Use for setting of new order of list
   const setList = useCallback(
     (payload: any) => {
       dispatch({
@@ -37,8 +41,9 @@ export default function useShoppingList() {
     [dispatch]
   );
 
+  // Use for adding new item in a list
   const setListItem = useCallback(
-    (payload: any) => {
+    (payload: ItemType) => {
       dispatch({
         type: "shoppingList/setList",
         payload: [...list, payload],

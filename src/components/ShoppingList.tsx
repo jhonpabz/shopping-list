@@ -16,11 +16,12 @@ const ShoppingList = SortableContainer(
       <BaseComponentLayout {...restProps}>
         <ul className="flex flex-col">
           <ShoppingListHeader />
-          {list.map((item: any, index: any) => (
+          {list.map((listItem: ItemType, index: any) => (
             <ShoppingListItem
-              key={`item-${item.id}`}
+              key={`item-${listItem.id}`}
               index={index}
-              item={item}
+              // @ts-ignore
+              item={listItem}
             />
           ))}
         </ul>
