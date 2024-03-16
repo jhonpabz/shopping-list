@@ -3,6 +3,8 @@ import BaseComponentLayout from "@/layouts/BaseComponentLayout";
 import BaseButton from "./base/BaseButton";
 import useShoppingList from "@/hooks/redux/useShoppingList";
 import { TextField } from "@/components/forms";
+import BaseImage from "@/components/base/BaseImage";
+import DragIcon from "@/assets/icons/drag.png";
 
 const ShoppingListItem = SortableElement(
   (props: ComponentsPropsNamespace.ShoppingListItem) => {
@@ -22,7 +24,13 @@ const ShoppingListItem = SortableElement(
 
     return (
       <BaseComponentLayout {...restProps}>
-        <li tabIndex={0} className="flex justify-between my-4 gap-4">
+        <li tabIndex={0} className="flex justify-between my-4 gap-1 md:gap-4">
+          <BaseImage
+            height={40}
+            width={40}
+            src={DragIcon}
+            className="cursor-grab"
+          />
           <TextField fieldValue={item.listName} readOnly />
           <TextField
             className="max-w-[90px]"
