@@ -60,5 +60,8 @@ declare namespace ComponentsPropsNamespace {
     label: string;
     register: any;
     options: any;
+    required?: boolean | undefined;
   };
+
+  type ErrorMessage = React.HTMLAttributes<HTMLParagraphElement>;
 }

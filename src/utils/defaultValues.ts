@@ -1,5 +1,5 @@
 export const listFormDefault = {
   listName: "",
-  type: "grocery",
+  type: "",
   quantity: "1",
 };

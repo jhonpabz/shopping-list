@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <main className="w-full">
-      Test
+      My Shopping List
       <ListContainer>
         <BaseButton onClick={handleAddItem}>+ Add an item</BaseButton>
         <ShoppingList onSortEnd={onSortEnd} />

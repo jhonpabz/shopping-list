@@ -35,6 +35,7 @@ export default function AddItemModal() {
           name="type"
           options={typeOption}
           label="Type"
+          required
         />
 
         <SelectField

@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { Controller } from "react-hook-form";
 import BaseComponentLayout from "@/layouts/BaseComponentLayout";
+import ErrorMessage from "@/components/forms/ErrorMessage";
 
 export default function TextField(props: ComponentsPropsNamespace.TextField) {
   const {
@@ -16,10 +17,7 @@ export default function TextField(props: ComponentsPropsNamespace.TextField) {
   const isError = !!form.formState.errors[name]?.message;
 
   const borderClass = useMemo(
-    () =>
-      isError
-        ? "border-[#f56c6c] border-[0.5px]"
-        : "border-[#66666660] border-[0.5px]",
+    () => (isError ? "border-[#f56c6c]" : "border-[#66666660] "),
     [isError]
   );
 
@@ -49,9 +47,13 @@ export default function TextField(props: ComponentsPropsNamespace.TextField) {
                 changeListener(event);
               }}
               value={value}
-              className={`block w-full rounded p-[9px] text-sm focus:border-[#409eff] ${borderClass}`}
+              className={`block w-full rounded p-[9px] text-sm  border-[0.5px] focus:border-[#409eff] ${borderClass}`}
               placeholder={placeholder}
             />
+
+            {isError && (
+              <ErrorMessage>{form.formState.errors[name].message}</ErrorMessage>
+            )}
           </div>
         )}
       />
